@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursor Creative Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+</head>
+<body>
+
+  <div class="ui-panel top-left">
+    <img src="resources/CursorCreative.png" alt="Cursor Creative Lab" class="main-logo">
+    
+    <div class="custom-dropdown">
+      <button class="dropdown-toggle" id="bucket-toggle">
+        <span>Logo</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      
+      <ul class="dropdown-menu" id="bucket-menu">
+        <li class="active">Logo</li>
+        <li>Product UI</li>
+        <li>Social Media</li>
+        <li>Editorial/ Blog</li>
+        <li>Data Viz</li>
+        <li>Grok Code</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ui-panel bottom-left">
+    <ul class="art-styles">
+      <li>Noise Shader</li>
+      <li>Motion Blur</li>
+      <li>Kinetic Type</li>
+      <li>3D WebGL</li>
+      <li>ASCII</li>
+      <li>Pen Plotter</li>
+      <li>Procedural</li>
+      <li>Line Art</li>
+      <li>Particle Systems</li>
+      <li>Flow Fields</li>
+      <li>Generative Data Viz</li>
+    </ul>
+  </div>
+
+  <div class="ui-panel top-right">
+    <div class="controls-panel">
+      <div class="panel-header">Controls</div>
+      </div>
+  </div>
+
+  <div class="ui-panel bottom-right">
+    <button class="export-btn">Export</button>
+  </div>
+
+  <script src="cube.js"></script>
+  <script src="mesh.js"></script>
+  <script src="flow.js"></script>
+  <script src="lines.js"></script> 
+  <script src="shader.js"></script>
+  <script src="bio.js"></script>
+  
+  <script src="sketch.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleBtn = document.getElementById('bucket-toggle');
+      const dropdownMenu = document.getElementById('bucket-menu');
+
+      // Toggle dropdown on click
+      toggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevents the click from immediately bubbling up to the document
+        dropdownMenu.classList.toggle('show');
+      });
+
+      // Close dropdown when clicking anywhere else on the page
+      document.addEventListener('click', (e) => {
+        if (!dropdownMenu.contains(e.target) && e.target !== toggleBtn) {
+          dropdownMenu.classList.remove('show');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
