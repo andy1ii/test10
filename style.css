@@ -66,33 +66,31 @@ canvas {
   z-index: 10;
 }
 
-/* Scaling all UI panels down by exactly half (0.5). 
-  Using transform-origin ensures they stay anchored to their corners!
-*/
+/* Scaling all UI panels down by exactly half (0.5) and moved closer to the edge (20px). */
 .top-left { 
-  top: 40px; 
-  left: 40px; 
+  top: 20px; 
+  left: 20px; 
   transform-origin: top left;
   transform: scale(0.5);
 }
 
 .bottom-left { 
-  bottom: 40px; 
-  left: 40px; 
+  bottom: 20px; 
+  left: 20px; 
   transform-origin: bottom left;
   transform: scale(0.5);
 }
 
 .top-right { 
-  top: 40px; 
-  right: 40px; 
+  top: 20px; 
+  right: 20px; 
   transform-origin: top right;
   transform: scale(0.5);
 }
 
 .bottom-right { 
-  bottom: 40px; 
-  right: 40px; 
+  bottom: 20px; 
+  right: 20px; 
   transform-origin: bottom right;
   transform: scale(0.5);
 }
